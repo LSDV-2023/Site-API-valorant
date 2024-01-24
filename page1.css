@@ -26,7 +26,7 @@ li, a, button, .context{
 header{
     display: flex;
     flex-wrap: wrap;
-    /* taille des bord */
+    /* met les bord d'à coté rond */
     border-radius: 100px;
     /* permet de mettre les items au fond à doite et à gauche */
     justify-content: space-between;
