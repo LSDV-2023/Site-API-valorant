@@ -30,3 +30,5 @@ fetch("https://valorant-api.com/v1/weapons")
       // document.body.style.backgroundImage = "url('" + weapon.shopData.newImage + "')";
     }
   }
+
+
