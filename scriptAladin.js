@@ -9,8 +9,12 @@ fetch("https://valorant-api.com/v1/weapons")
   .then(data => {
     console.log(data);
     // displayWeapon(data)
+    weapon_images(data);
     weapon_names(data);
-    weapon_images(data)
+    weapon_name_image(data)
+    
+    // weapon_name_image(data);
+    // console.log(weapon_names(data))
 
   })
   .catch((error) => console.error("FETCH ERROR:", error));
@@ -47,9 +51,8 @@ fetch("https://valorant-api.com/v1/weapons")
             function weapon_h1(p){
                 
                 const h1=document.createElement("h1");
-                h1.innerHTML=p
+                h1.appendChild(document.createTextNode(p))
                 
-              
                 return h1
             }
 
@@ -74,48 +77,62 @@ fetch("https://valorant-api.com/v1/weapons")
 
             const weapon = data.data[i];
 
-            function weapon_src(img){
-                const src=document.createTextNode(img);
-                return src
-            }
-            
-            function weapon_span(image,style){
-            
-                const span = document.createElement("span");
-            
-                span.appendChild(weapon_src(image));
-            
-                span.classList.add(style)
-                
-                return span 
-            }
-            
+            function weapon_image (p){
+               const img = document.createElement("img");
+               img.src = p;
+               img.classList.add("image-grid")
+               return img
+             }
+
             function weapon_div (p){
                 const div = document.createElement("div");
                 
-                // const weaponPicture = weapon.shopData.newImage;
-                div.appendChild(weapon_span(p,'item1'));
-            
+                div.appendChild(weapon_image(p));
+
                 return div
             }
 
-            function weapon_image (p){
+            function weapon_div2(p){
+              const div = document.createElement("div");
+              div.classList.add("item1");
+              div.appendChild(weapon_div(p));
 
-                const img = document.createElement("img");
-                
-                img.src = weapon.shopData.newImage
-
-                img.appendChild(weapon_div(p));
-            
-                return img
+              return div
             }
-            
-            
-            
-            const weapon_name = document.querySelector("#weapon_image");
-            
-            
-            weapon_name.appendChild(weapon_image(data.data))
+
+            const imagerie = document.querySelector("#weapon_image");
+            imagerie.appendChild(weapon_div2(weapon.shopData.newImage))
             
         }
     }
+
+  //   function weapon_name_image(data){
+  //     for (let i = 0;i < data.data.length-1 ; i++ ){
+
+  //       const weapon = data.data[i];
+
+
+  //     function weapon_image (p){
+  //       const img = document.createElement("img");
+  //       img.src = p;
+  //       img.classList.add("image-grid")
+  //       return img
+  //     }
+
+  //    function weapon_div (p){
+  //        const div = document.createElement("div");
+         
+  //        div.appendChild(weapon_image(p));
+
+  //        return div
+  //    }
+
+  //    function weapon_div2(p){
+  //      const div = document.createElement("div");
+  //      div.classList.add("item1");
+  //      div.appendChild(weapon_div(p));
+
+  //      return div
+  //    }         
+  //     }
+  // }
