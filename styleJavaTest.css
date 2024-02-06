@@ -143,12 +143,8 @@ button:hover {
     background-color: rgba(0, 0, 0);
 }
 
-.item3{
+#weapon_name_image{
     grid-column: 3 ;
-    
-    border: 2px solid;
-    border-color: rgb(70, 18, 167);
-    background-color: rgba(0, 0, 0);
 }
 
 
