@@ -93,6 +93,7 @@ button:hover {
     padding: 50px;
     /* pour centrer le texte masque le grid  */
     text-align: center;
+    height: auto;
     
 }
 
@@ -100,10 +101,11 @@ button:hover {
     display: grid;
     color: orange;
     
-    /* grid-template-columns:100px 200px;
-    grid-template-rows:100px ; */
+    grid-template-columns:0px 4fr  4fr ;
+    /* grid-template-rows:200px ; */
+
     /* object-fit: cover;
-    object-fit: contain; */
+    object-fit: contain;
 
     
 
@@ -116,52 +118,69 @@ button:hover {
 
     /* background-color: rgba(0, 0, 0); */
 
-    /* espace entre le texte et la bordure */
-    /* padding: 50px; */
     /* pour centrer le texte masque le grid  */
     /* text-align: center; */
     
     
-    grid:
-    'left right';
+    
 
     gap: 50px 50px;
     
 }
-#weapon img{
-    grid-area: left;
+.item1{
+    grid-column: 2 ;
     /* border: 2px solid;
     border-color: rgb(70, 18, 167);
     background-color: rgba(0, 0, 0); */
     padding: 0px;
 }
 
-#weapon h2{
-    grid-area: 2;
+.item2{
+    grid-column: 2 ;
+    
     border: 2px solid;
     border-color: rgb(70, 18, 167);
     background-color: rgba(0, 0, 0);
 }
 
-#weapon h3{
-    grid-area: 3;
+.item3{
+    grid-column: 3 ;
+    
     border: 2px solid;
     border-color: rgb(70, 18, 167);
     background-color: rgba(0, 0, 0);
 }
 
 
-#weapon h1{
-    grid-area: right;
+.item1-1{
+    grid-column: 3 ;
+    
+
+
+    border: 2px solid;
+    
+    border-color: rgb(70, 18, 167);
+    background-color:rgb(250, 187, 154,0.3);
+    /* padding: 50px; */
+    text-align: center;
+
+} 
+.item3-1{
+    grid-column: 3 ;
     border: 2px solid;
     width: 600px;
     border-color: rgb(70, 18, 167);
     background-color:rgb(250, 187, 154,0.3);
     /* padding: 50px; */
     text-align: center;
-} */
+} 
 
-#weapon img{
+.p1{
+
+    text-align: left;
+}
+
+.image-grid{
     --gap:16px;
     --num-cols:3;
     --row-height:300px;
@@ -175,8 +194,8 @@ button:hover {
     gap:var(--gap);
 
 }
-#weapon img > img {
-    width: 100%;
-    height: 100%;
+.image-grid > img {
+    width: auto;
+    height: 300px;
 
 }
