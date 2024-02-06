@@ -71,7 +71,6 @@ fetch("https://valorant-api.com/v1/weapons")
         }
     }
 
-
     function weapon_images(data){
         for (let i = 0;i < data.data.length-1 ; i++ ){
 
