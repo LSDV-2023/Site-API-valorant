@@ -4,47 +4,36 @@ function weapon_name_image(data){
       const weapon = data.data[i];
 
 
-    function weapon_image (){
+    function weapon_I (i){
       const img = document.createElement("img");
-      img.src = weapon.shopData.newImage;
-      img.classList.add("image-grid")
+      img.src = i;
+      img.classList.add("image-grid");
+
       return img
     }
-
-    function weapon_div_image (){
-       const div = document.createElement("div");
-       div.appendChild(weapon_image());
-
-       return div
-    }
-
-    function weapon_div_image(){
-     const div2 = document.createElement("div");
-     div2.classList.add("item1");
-     div2.appendChild(weapon_div());
-
-     return div2
-    }  
-    
-
-    function weapon_h1(){
-            
+      function weapon_N (n){
       const h1=document.createElement("h1");
-      h1.appendChild(document.createTextNode(weapon.displayName));
+      h1.appendChild(document.createTextNode(n));
       h1.classList.add("item1-1");
 
       return h1
     }
 
-    function weapon_div_nom(){
-        const div =document.createElement("div");
-        div.appendChild(weapon_h1());
+    function weapon_div_NI (n,i){
+       const divI=document.createElement("div");
+       divI.appendChild(weapon_I(i))
 
-        return div
+       const divI2=document.createElement("div");
+       divI2.classList.add("item1");
+       divI2.appendChild(divI)
 
+       const divN = document.createElement("div");
+       divN.appendChild(weapon_N(n));
+
+       return divN,divI2
     }
 
     const affichage = document.querySelector("#weapon_name_image");
-    affichage.appendChild(weapon_div_nom(),weapon_div_image())
+    affichage.appendChild(weapon_div_NI(weapon.displayName,weapon.shopData.newImage))
   }
 }
