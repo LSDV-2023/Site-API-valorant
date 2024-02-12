@@ -28,11 +28,11 @@ fetch("https://valorant-api.com/v1/maps")
     
     //       return img
     //     }
-<<<<<<< Updated upstream
+
     //       function maps_N (n){
     //       const h1=document.createElement("h1");
     //       h1.appendChild(document.createTextNode(n));
-=======
+
     // }
 
     // function weapon_images(data){
@@ -68,29 +68,29 @@ fetch("https://valorant-api.com/v1/maps")
             
     //     }
     // }
-      function maps_name_image(data){
-        for (let i = 0;i < data.data.length-1 ; i++ ){
+      // function maps_name_image(data){
+      //   for (let i = 0;i < data.data.length-1 ; i++ ){
     
-          const maps = data.data[i];
+      //     const maps = data.data[i];
     
     
-        function maps_I (i){
-          const img = document.createElement("img");
-          img.src = i;
+      //   function maps_I (i){
+      //     const img = document.createElement("img");
+      //     img.src = i;
           
     
-          return img
-        }
-          function maps_N (n){
-          const h1=document.createElement("h1");
-          h1.appendChild(document.createTextNode(n));
->>>>>>> Stashed changes
+      //     return img
+      //   }
+      //     function maps_N (n){
+      //     const h1=document.createElement("h1");
+      //     h1.appendChild(document.createTextNode(n));
+
           
     
     //       return h1
     //     }
     
-<<<<<<< Updated upstream
+
     //     function maps_div_NI (n,i){
     //       const divI=document.createElement("span");
     //       divI.appendChild(maps_I(i))
@@ -98,18 +98,16 @@ fetch("https://valorant-api.com/v1/maps")
     //       const divI2=document.createElement("span");
     //       divI2.classList.add("item1");
     //       divI2.appendChild(divI)
-=======
-        function maps_div_NI (n,i){
-          const divI=document.createElement("span");
-          divI.appendChild(maps_I(i));
-          divI.classList.add("image-grid");
+
+        // function maps_div_NI (n,i){
+        //   const divI=document.createElement("span");
+        //   divI.appendChild(maps_I(i));
+        //   divI.classList.add("image-grid");
     
     
-          const divI2=document.createElement("span");
-          divI2.classList.add("item1");
-          divI2.appendChild(divI);
->>>>>>> Stashed changes
-    
+        //   const divI2=document.createElement("span");
+        //   divI2.classList.add("item1");
+        //   divI2.appendChild(divI);
     //       const divN = document.createElement("div");
     //       divN.appendChild(maps_N(n));
     //       divN.classList.add("item1-1");
@@ -118,7 +116,6 @@ fetch("https://valorant-api.com/v1/maps")
           
     //     }
     
-<<<<<<< Updated upstream
     //     const affichage = document.querySelector("#maps_name_image");
     //     const t = maps_div_NI(maps.displayName,maps.shopData.newImage);
     //     affichage.appendChild(t[0]);
@@ -127,7 +124,7 @@ fetch("https://valorant-api.com/v1/maps")
     // }
     function maps_name_image(data) {
       for (let i = 0; i < data.data.length; i++) {
-          const map = data.data[i];
+          const maps = data.data[i];
   
           function map_image(imageUrl) {
               const img = document.createElement("img");
@@ -139,30 +136,30 @@ fetch("https://valorant-api.com/v1/maps")
           function map_name(name) {
               const h1 = document.createElement("h1");
               h1.appendChild(document.createTextNode(name));
+              
               return h1;
           }
   
           function map_div(name, imageUrl) {
-              const div = document.createElement("div");
-              const image = map_image(imageUrl);
-              const nameElement = map_name(name);
-  
-              div.appendChild(nameElement);
-              div.appendChild(image);
-              div.classList.add("map-item");
-  
-              return div;
+            const divI=document.createElement("span");
+            divI.appendChild(map_image(imageUrl))
+            divI.classList.add("image-grid");
+            const divI2=document.createElement("span");
+            divI2.classList.add("item1");
+            
+            divI2.appendChild(divI);
+            
+            const divN = document.createElement("div");
+            divN.appendChild(map_name(name));
+            divN.classList.add("item1-1");
+      
+            return [divI2,divN]
           }
   
-          const affichage = document.querySelector("#maps_name_image");
-          const mapDiv = map_div(map.displayName, map.splash);
-          affichage.appendChild(mapDiv);
-=======
+        
         const affichage = document.querySelector("#maps_name_image");
-        const t = maps_div_NI(maps.displayName,maps.splash);
+        const t = map_div(maps.displayName,maps.splash);
         affichage.appendChild(t[0]);
         affichage.appendChild(t[1]);
->>>>>>> Stashed changes
       }
   }
-  
