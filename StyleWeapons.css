@@ -101,7 +101,7 @@ button:hover {
     display: grid;
     color: orange;
     
-    grid-template-columns:0px 4fr  4fr ;
+    grid-template-columns:0px 4fr  2fr ;
     /* grid-template-rows:200px ; */
 
     /* object-fit: cover;
@@ -128,11 +128,11 @@ button:hover {
     
 }
 .item1{
+    /* j'ai ajouté le display grid pour que l'image se centre */
     grid-column: 2 ;
-    /* border: 2px solid;
-    border-color: rgb(70, 18, 167);
-    background-color: rgba(0, 0, 0); */
+    display: grid;
     padding: 0px;
+    align-items: center;
 }
 
 .item2{
@@ -163,12 +163,24 @@ button:hover {
 .p1{
 
     text-align: left;
+    /* taille de la chaine de charachter */
+    font-size: 25px;
+    /* l'espace laissé quand on fait un saut de ligne */
+    line-height: 0.8;
+    
+}
+
+h1{
+    padding: 10px;
 }
 
 .image-grid{
     --gap:16px;
     --num-cols:3;
-    --row-height:300px;
+    --row-height:500px;
+    /* modification de la taille des images */
+    height: auto;
+    width: 600px;
 
     box-sizing: border-box;
     padding:var(--gap);
@@ -181,6 +193,6 @@ button:hover {
 }
 .image-grid > img {
     width: auto;
-    height: 300px;
+    height: 500px;
 
 }

@@ -13,7 +13,6 @@ fetch("https://valorant-api.com/v1/weapons")
     // console.log(weapon_names(data));
     // console.log(weapon_images(data))
 
-    weapon_name_image(data);
     console.log(weapon_name_image(data))
 
   })
@@ -74,10 +73,10 @@ fetch("https://valorant-api.com/v1/weapons")
           weapon.weaponStats.reloadTimeSeconds,weapon.weaponStats.wallPenetration);
     
          function weapon_div_NI (n,i){
-          const divI=document.createElement("span");
+          const divI=document.createElement("span1");
           divI.appendChild(weapon_I(i))
     
-          const divI2=document.createElement("span");
+          const divI2=document.createElement("span1");
           divI2.classList.add("item1");
           divI2.appendChild(divI)
     
