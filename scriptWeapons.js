@@ -40,30 +40,38 @@ fetch("https://valorant-api.com/v1/weapons")
           
           return h1
         }
-
-        function weapon_description(){
-          const description=document.createElement("p");
+        //préparer le texte et l'emplacement qui va avec chaque information qu'on va ajouté
+        function weapon_description(c,fr,ms,rt,wp){
+          const category=document.createElement("p");
           //weapon.category.substr ==>commencer ver un point précis
-          description.appendChild(document.createTextNode("Category:"));
-          description.appendChild(document.createTextNode(weapon.category.substr(21,weapon.category.length)));
+          category.appendChild(document.createTextNode("Category: "));
+          category.appendChild(document.createTextNode(c.substr(21,c.length)));
           //comment faire un saut de ligne?
-          description.appendChild(document.createTextNode(",Fire Rate:"));
-          description.appendChild(document.createTextNode(weapon.weaponStats.fireRate));
-          
-          description.appendChild(document.createTextNode(",Magasine size:"));
-          description.appendChild(document.createTextNode(weapon.weaponStats.magazineSize));
-          
-          description.appendChild(document.createTextNode(",Reload time:"));
-          description.appendChild(document.createTextNode(weapon.weaponStats.reloadTimeSeconds));
-          description.appendChild(document.createTextNode(" secondes"));
-          
-          description.appendChild(document.createTextNode(",Wall penetration:"));
-          description.appendChild(document.createTextNode(weapon.weaponStats.wallPenetration.substr(29,weapon.weaponStats.wallPenetration.length)));
+          //il faut créer à chaque fois un nouveau élément p et mettre dedans les informations qu'on veut
+          const FireRate=document.createElement("p");
+          FireRate.appendChild(document.createTextNode("Fire Rate: "));
+          FireRate.appendChild(document.createTextNode(fr));
+
+          const MagasineSize=document.createElement("p");
+          MagasineSize.appendChild(document.createTextNode("Magasine size: "));
+          MagasineSize.appendChild(document.createTextNode(ms));
+
+          const ReloadTime=document.createElement("p");
+          ReloadTime.appendChild(document.createTextNode("Reload time: "));
+          ReloadTime.appendChild(document.createTextNode(rt));
+          ReloadTime.appendChild(document.createTextNode(" secondes"));
+
+          const WallPenetration=document.createElement("p");
+          WallPenetration.appendChild(document.createTextNode("Wall penetration: "));
+          WallPenetration.appendChild(document.createTextNode(wp.substr(29,wp.length)));
           
           
         
-          return description
+          return [category,FireRate,MagasineSize,ReloadTime,WallPenetration]
         }
+        //on ajoute toutes les données qu'on veut on vérifiant qu'il correspondent paraport à la fonction
+        const d = weapon_description(weapon.category,weapon.weaponStats.fireRate,weapon.weaponStats.magazineSize,
+          weapon.weaponStats.reloadTimeSeconds,weapon.weaponStats.wallPenetration);
     
          function weapon_div_NI (n,i){
           const divI=document.createElement("span");
@@ -78,7 +86,11 @@ fetch("https://valorant-api.com/v1/weapons")
           divN.classList.add("item1-1");
 
           const divS = document.createElement("p1");
-          divS.appendChild(weapon_description());
+          // on utilise le 'for' pour éviter d'écrire tous les nombres et pour que les informations s'ajoute
+          //automatiquement après avoir modifié la fonction 'weapon_decription()'
+          for (let i in d){
+            divS.appendChild(d[i]);
+          } 
           divS.classList.add("p1");
           divN.appendChild(divS)
           
@@ -89,9 +101,11 @@ fetch("https://valorant-api.com/v1/weapons")
     
         const affichage = document.querySelector("#weapon_name_image");
         const t = weapon_div_NI(weapon.displayName,weapon.shopData.newImage);
-        affichage.appendChild(t[0]);
-        affichage.appendChild(t[1]);
-        
+
+        //meme chose que toute à l'heure
+        for (let i in t){
+        affichage.appendChild(t[i]);
+        }
         
       }
     }
