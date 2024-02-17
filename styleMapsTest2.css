@@ -94,25 +94,29 @@ button:hover {
     /* pour centrer le texte masque le grid  */
     text-align: center;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 100px 100px;
+    justify-content: center;
     
 }
 
 .text{ 
-    display: grid;
-    color: orange;
     
-    grid-template-rows: 400px  1fr ;
-
-    gap: 50px 50px;
+    color: orange;
+    gap: 20px 20px;
+    
     
 }
 .item1{
-    grid-row: 1 ;
-    border: 2px solid;
-    border-color: rgb(70, 18, 167);
-    background-color: rgba(0, 0, 0);
-    padding: 0px;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
+    display: grid;
+    align-items: center;
+    
+    
+   
+
 }
 
 .item2{
@@ -123,46 +127,65 @@ button:hover {
     background-color: rgba(0, 0, 0);
 }
 
-#maps_name_image{
-    grid-row: 1/span 2 ;
-}
-
-
 .item1-1{
-    grid-row: 2 ;
+    
     border: 2px solid;
     
-    border-color: rgb(70, 18, 167);
+    border-color: rgb(43, 94, 77);
     background-color:rgb(250, 187, 154,0.3);
     /* padding: 50px; */
     text-align: center;
+    padding: 5px;
+    
 
 } 
 
 
 .p1{
-    text-align: left;
-    font-size: 20px;
+    
+    font-size: 40px;
+    line-height: 1;
+   
 }
 
+h1{
+    line-height: 0.5;
+}
 .image-grid{
-    --gap:16px;
-    --num-cols:3;
-    --row-height:300px;
+    --gap:5px;
+    --num-cols:2;
+    --row-height:auto;
 
     box-sizing: border-box;
     padding:var(--gap);
 
     display: grid;
-    grid-template-columns: repeat(var(--num-cols),1fr);
+    grid-template-columns: repeat(var(--num-cols),2fr);
     grid-auto-rows:var(--row-height) ;
     gap:var(--gap);
     object-fit: cover;
+    width: 100%;
+    height: auto;
+
+   align-items: center;
+   align-self: center;
+   align-content: center;
+
+   
 
 }
 .image-grid > img {
-    width: auto;
-    height: 300px;
-    object-fit: cover;
+   object-fit: cover;
+   /* max-width: 1000px;
+   max-height: 800px; */
+   align-content: center;
+   width:fit-content;
+   max-width: 100%;
+   height: auto;
+
+   align-items: center;
+   align-self: center;
+   align-content: center;
+    
 
 }

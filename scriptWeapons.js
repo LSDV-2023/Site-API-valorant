@@ -8,10 +8,7 @@ fetch("https://valorant-api.com/v1/weapons")
   })
   .then(data => {
     console.log(data);
-    // weapon_images(data);
-    // weapon_names(data);
-    // console.log(weapon_names(data));
-    // console.log(weapon_images(data))
+
 
     console.log(weapon_name_image(data))
 
@@ -20,6 +17,7 @@ fetch("https://valorant-api.com/v1/weapons")
 
 
       function weapon_name_image(data){
+        //j'ai pas afficher la dernière arme car elle ne contient pas beaucoup d'info
         for (let i = 0;i < data.data.length-1 ; i++ ){
     
           const weapon = data.data[i];
