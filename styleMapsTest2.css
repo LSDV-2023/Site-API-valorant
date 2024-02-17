@@ -119,6 +119,17 @@ button:hover {
 
 }
 
+.title{
+    align-items: center;
+    
+    border: 10px solid;
+    border-color: rgb(107, 24, 44);
+    background-color: rgba(0, 0, 0);
+    border-block: 10px solid rgb(240, 98, 88);
+    writing-mode: horizontal-tb;
+    direction: rtl;
+}
+
 .item2{
     grid-column: 2 ;
     
@@ -136,6 +147,7 @@ button:hover {
     /* padding: 50px; */
     text-align: center;
     padding: 5px;
+    
     
 
 } 

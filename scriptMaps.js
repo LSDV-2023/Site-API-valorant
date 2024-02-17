@@ -36,7 +36,11 @@ fetch("https://valorant-api.com/v1/maps")
           
           return h1
         }
+
+
+
         const d = map_description(map.narrativeDescription);
+
         function map_description(d){
           const description=document.createElement("p"); 
           
@@ -48,15 +52,18 @@ fetch("https://valorant-api.com/v1/maps")
           else{
             description.appendChild(document.createTextNode(d));
           }
-          
-          
-          
+    
           return [description]
         }
+
+
         //on ajoute toutes les données qu'on veut on vérifiant qu'il correspondent paraport à la fonction
         
     
          function map_div_NI (n,i){
+
+          
+
           const divI=document.createElement("span1");
           divI.appendChild(map_I(i))
     
@@ -66,19 +73,21 @@ fetch("https://valorant-api.com/v1/maps")
     
           const divN = document.createElement("div");
           divN.appendChild(map_N(n));
-          divN.classList.add("item1-1");
+          divN.classList.add("title");
 
-          const divS = document.createElement("p1");
+          const divD= document.createElement("div")
+          divD.classList.add("item1-1")
+          
+          const div_descr = document.createElement("p1");
           // on utilise le 'for' pour éviter d'écrire tous les nombres et pour que les informations s'ajoute
           //automatiquement après avoir modifié la fonction 'weapon_decription()'
           for (let i in d){
-            divS.appendChild(d[i]);
+            div_descr.appendChild(d[i]);
           } 
-          divS.classList.add("p1");
-          divN.appendChild(divS)
-          
 
-          return [divI2,divN]
+          divD.appendChild(div_descr) ;
+
+          return [divN,divI2,divD]
           
         }
     
