@@ -46,7 +46,7 @@ fetch("https://valorant-api.com/v1/maps")
           
             //j'ai mis une condition pour afficher un autre texte si une map n'a pas ssa description
           if (d==null){
-            description.appendChild(document.createTextNode("No description fro the moment"))
+            description.appendChild(document.createTextNode("No description for the moment"))
           }
 
           else{
@@ -62,21 +62,22 @@ fetch("https://valorant-api.com/v1/maps")
     
          function map_div_NI (n,i){
 
-          
-
-          const divI=document.createElement("span1");
-          divI.appendChild(map_I(i))
-    
-          const divI2=document.createElement("span1");
-          divI2.classList.add("item1");
-          divI2.appendChild(divI)
-    
           const divN = document.createElement("div");
           divN.appendChild(map_N(n));
           divN.classList.add("title");
 
+
+          const divI=document.createElement("div");
+          divI.classList.add("item1")
+          divI.appendChild(map_I(i))
+    
+          const container=document.createElement("div");
+          container.classList.add("container");
+          container.appendChild(divI)
+    
+          
           const divD= document.createElement("div")
-          divD.classList.add("item1-1")
+          divD.classList.add("effet")
           
           const div_descr = document.createElement("p1");
           // on utilise le 'for' pour éviter d'écrire tous les nombres et pour que les informations s'ajoute
@@ -86,8 +87,9 @@ fetch("https://valorant-api.com/v1/maps")
           } 
 
           divD.appendChild(div_descr) ;
+          container.appendChild(divD)
 
-          return [divN,divI2,divD]
+          return [divN,container]
           
         }
     
