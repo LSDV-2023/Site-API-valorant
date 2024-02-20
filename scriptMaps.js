@@ -25,7 +25,7 @@ fetch("https://valorant-api.com/v1/maps")
          function map_I (i){
           const img = document.createElement("img");
           img.src = i;
-          img.classList.add("image-grid");
+          // img.classList.add("image-grid");
     
           return img
         }
@@ -66,10 +66,13 @@ fetch("https://valorant-api.com/v1/maps")
           divN.appendChild(map_N(n));
           divN.classList.add("title");
 
+          const div_image_grid=document.createElement("div");
+          div_image_grid.classList.add("image-grid");
+          div_image_grid.appendChild(map_I(i));
 
           const divI=document.createElement("div");
           divI.classList.add("item1")
-          divI.appendChild(map_I(i))
+          divI.appendChild(div_image_grid)
     
           const container=document.createElement("div");
           container.classList.add("container");
