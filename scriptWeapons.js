@@ -8,10 +8,7 @@ fetch("https://valorant-api.com/v1/weapons")
   })
   .then(data => {
     console.log(data);
-    // weapon_images(data);
-    // weapon_names(data);
-    // console.log(weapon_names(data));
-    // console.log(weapon_images(data))
+
 
     console.log(weapon_name_image(data))
 
@@ -20,6 +17,7 @@ fetch("https://valorant-api.com/v1/weapons")
 
 
       function weapon_name_image(data){
+        //j'ai pas afficher la dernière arme car elle ne contient pas beaucoup d'info
         for (let i = 0;i < data.data.length-1 ; i++ ){
     
           const weapon = data.data[i];
@@ -40,7 +38,7 @@ fetch("https://valorant-api.com/v1/weapons")
           return h1
         }
         //préparer le texte et l'emplacement qui va avec chaque information qu'on va ajouté
-        function weapon_description(c,fr,ms,rt,wp){
+        function weapon_description(c,fr,ms,rt,wp,hd,bd,ld){
           const category=document.createElement("p");
           //weapon.category.substr ==>commencer ver un point précis
           category.appendChild(document.createTextNode("Category: "));
@@ -64,13 +62,27 @@ fetch("https://valorant-api.com/v1/weapons")
           WallPenetration.appendChild(document.createTextNode("Wall penetration: "));
           WallPenetration.appendChild(document.createTextNode(wp.substr(29,wp.length)));
           
+          const HeadDamage=document.createElement("p");
+          HeadDamage.appendChild(document.createTextNode("Head Damage: "));
+          HeadDamage.appendChild(document.createTextNode(hd));
+          HeadDamage.appendChild(document.createTextNode(" DMG"));
+
+          const BodyDamage=document.createElement("p");
+          BodyDamage.appendChild(document.createTextNode("Body Damage: "));
+          BodyDamage.appendChild(document.createTextNode(bd));
+          BodyDamage.appendChild(document.createTextNode(" DMG"));
+
+          const LegDamage=document.createElement("p");
+          LegDamage.appendChild(document.createTextNode("Leg Damage: "));
+          LegDamage.appendChild(document.createTextNode(ld));
+          LegDamage.appendChild(document.createTextNode(" DMG"));
           
-        
-          return [category,FireRate,MagasineSize,ReloadTime,WallPenetration]
+          return [category,FireRate,MagasineSize,ReloadTime,WallPenetration,HeadDamage,BodyDamage,LegDamage]
         }
         //on ajoute toutes les données qu'on veut on vérifiant qu'il correspondent paraport à la fonction
         const d = weapon_description(weapon.category,weapon.weaponStats.fireRate,weapon.weaponStats.magazineSize,
-          weapon.weaponStats.reloadTimeSeconds,weapon.weaponStats.wallPenetration);
+          weapon.weaponStats.reloadTimeSeconds,weapon.weaponStats.wallPenetration,weapon.weaponStats.damageRanges[0].headDamage,
+          weapon.weaponStats.damageRanges[0].bodyDamage,weapon.weaponStats.damageRanges[0].legDamage);
     
          function weapon_div_NI (n,i){
           const divI=document.createElement("span1");
