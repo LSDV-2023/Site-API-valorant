@@ -151,16 +151,38 @@ button:hover {
     opacity: 0;
     
     position: absolute;
-    top: 20%;
+    top: 0%;
     left: 10%;
     /* transform: translate(50%, 50%);
     -ms-transform: translate(50%, 50%); */
     text-align: left;
-    font-size: 30px;
+    font-size: 5vw;/* 2.5 si plein écran avec pc avec top 20%  */
+     
     line-height: 1.5;
     
     color: aquamarine;
 
+}
+
+
+@media screen and (min-width: 956px) {
+    div.effet {
+      font-size: 2.5vw;
+      top:0%
+    }
+}
+
+@media screen and (max-width: 955px) {
+    div.effet {
+      font-size: 2vw;
+      top:10%
+    }
+}
+
+@media screen and (max-width: 614px) {
+    div.effet {
+      font-size: 1.5vw;
+    }
 }
 
 .container:hover .effet {
@@ -179,14 +201,15 @@ button:hover {
 
 } 
 
+/* pour changer l'écriture, les modifications se se font dans effet */
 
-.p1{
+/* .p1{
     
     font-size: 40px;
     line-height: 0.7;
     color:aquamarine;
     
-}
+} */
 
 h1{
     line-height: 0.5;
@@ -208,6 +231,20 @@ h1{
     height: auto;
     
 }
+
+@media screen and (max-width: 955px) {
+    div.image-grid {
+      width:180%
+    }
+}
+
+@media screen and (max-width: 614px) {
+    div.image-grid {
+      width:220%
+    }
+}
+
+
 .image-grid > img {
    object-fit: cover;
    /* max-width: 1000px;
