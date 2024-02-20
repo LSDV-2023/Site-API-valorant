@@ -77,16 +77,13 @@ button:hover {
 }
 
 .context{
-    /* display: grid; */
+    
     color: orange;
     border: 1px solid;
     border-color: firebrick;
-    /* grid-template-columns: 150px 100px 50px;
-    grid-template-rows: auto; */
     background-color: rgba(0, 0, 0, 0.6);
     /* espace entre le texte et la bordure */
     padding: 50px;
-    /* pour centrer le texte masque le grid  */
     text-align: center;
     height: auto;
     display: flex;
@@ -94,13 +91,14 @@ button:hover {
     gap: 100px 100px;
     justify-content: center;
     
+    
+    
 }
 
 .text{ 
-    
+    /* couleur des noms des maps */
     color: orange;
     gap: 20px 20px;
-    
     
 }
 
@@ -141,6 +139,8 @@ button:hover {
     direction: rtl;
 }
 
+/* pour changer l'écriture placé dans l'image */
+
 .effet {
     transition: .5s ease;
     opacity: 0;
@@ -148,20 +148,26 @@ button:hover {
     position: absolute;
     top: 0%;
     left: 10%;
-    /* transform: translate(50%, 50%);
-    -ms-transform: translate(50%, 50%); */
+
     text-align: left;
-    font-size: 5vw;/* 2.5 si plein écran avec pc avec top 20%  */
-     
+
+    
     line-height: 1.5;
     
     color: aquamarine;
 
 }
 
+.container:hover .effet {
+    opacity: 1;
+}
+
+
+/* rendre le texte responsive (change selon la taille de la page) */
 
 @media screen and (min-width: 956px) {
     div.effet {
+        /* vw est une valeur qui rend le texte responsive 50%, je reconfigure a chaque fois  */
       font-size: 2.5vw;
       top:0%
     }
@@ -180,36 +186,18 @@ button:hover {
     }
 }
 
-.container:hover .effet {
-    opacity: 1;
-  }
 
-.item1-1{
-    
-    border: 2px solid;
-    
-    border-color: rgb(43, 94, 77);
-    background-color:rgb(250, 187, 154,0.3);
-    /* padding: 50px; */
-    text-align: left   ;
-    padding: 5px;  
 
-} 
 
-/* pour changer l'écriture, les modifications se se font dans effet */
 
-/* .p1{
-    
-    font-size: 40px;
-    line-height: 0.7;
-    color:aquamarine;
-    
-} */
+
 
 h1{
-    line-height: 0.5;
+    /* l'espace libre qu'on on saute de ligne */
+    line-height: 0.8;
 }
 .image-grid{
+    /* pour que la map ne deborde pas hors de sa place */
     --gap:5px;
     --num-cols:1;
     --row-height:auto;
@@ -217,16 +205,18 @@ h1{
     box-sizing: border-box;
     padding:var(--gap);
 
-    display: grid ;
+    display: grid  ;
     grid-template-columns: repeat(var(--num-cols),2fr);
     grid-auto-rows:var(--row-height) ;
     gap:var(--gap);
     object-fit: cover;
+    /* width controle la taille de l'image */
     width: 150%;
     height: auto;
     
 }
 
+/* rendre les images responsives (change selon la taille de la page) */
 @media screen and (max-width: 955px) {
     div.image-grid {
       width:180%
