@@ -199,3 +199,18 @@ button:hover {
     height: 300px;
 
 }
+
+
+/* mettre ma div class "Test" dans Home.html et mettre l'image au milieu */
+.Test{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+
+} 
+
+.Test2{
+    width: 200%;
+    height: 200%;
+}
