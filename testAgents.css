@@ -101,8 +101,8 @@ button:hover {
     display: grid;
     color: orange;
     
-    grid-template-columns: 4fr  2fr ;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr  2fr ;
+    
      gap: 50px 50px;
      min-width: 100px;
     
@@ -110,7 +110,7 @@ button:hover {
 .item1{
     /* j'ai ajouté le display grid pour que l'image se centre */
     grid-column: 1 ;
-    grid-row: 1;
+    
     display: grid;
     padding: 0px;
     align-items: center;
@@ -125,9 +125,8 @@ button:hover {
 }
 
 
-.item1-1{
+.item2{
     grid-column: 2 ;
-    grid-row: 1;
     border: 2px solid;
     
     border-color: rgb(70, 18, 167);
@@ -137,20 +136,75 @@ button:hover {
     width:fit-content;
     max-width: 100%;
     height: auto;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
 
+    align-items: center;
 } 
 
-.item2{
-    /* j'ai ajouté le display grid pour que l'image se centre */
-    grid-column: 1 /span 2 ;
-    grid-row: 2;
-    display: grid;
-    grid-template-columns: 2fr 2fr 2fr;
-    padding: 0px;
-    align-items: center;
-    width: 75%;
-    float: right;
+
+
+.item2-1{
+    grid-row: 1 ;
+    
+    border: 2px solid;
+    
+    border-color: rgb(70, 18, 167);
+    background-color:rgba(0, 216, 254, 0.808);
+    /* padding: 50px; */
+    text-align: center;
+    width:fit-content;
+    max-width: 100%;
+    height: auto;
+
 }
+
+.item2-2{
+    grid-row: 2 ;
+    
+    border: 2px solid;
+    
+    border-color: rgb(70, 18, 167);
+    background-color:rgba(13, 84, 37, 0.808);
+    /* padding: 50px; */
+    text-align: center;
+    width:fit-content;
+    max-width: 100%;
+    height: auto;
+
+}
+
+.item2-3{
+    grid-row: 3 ;
+    
+    border: 2px solid;
+    
+    border-color: rgb(70, 18, 167);
+    background-color:rgba(254, 85, 0, 0.808);
+    /* padding: 50px; */
+    text-align: center;
+    width:fit-content;
+    max-width: 100%;
+    height: auto;
+
+}
+
+.item2-4{
+    grid-row: 4 ;
+    
+    border: 2px solid;
+    
+    border-color: rgb(70, 18, 167);
+    background-color:rgba(254, 0, 169, 0.808);
+    /* padding: 50px; */
+    text-align: center;
+    width:fit-content;
+    max-width: 100%;
+    height: auto;
+
+}
+
+
 
 
 .p1{
