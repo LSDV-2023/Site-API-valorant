@@ -1,4 +1,4 @@
-fetch("https://valorant-api.com/v1/agents")
+fetch("https://valorant-api.com/v1/agents?isPlayableCharacter=true")
   .then((response) => {
     if (response.ok) {
       return response.json();
@@ -102,4 +102,7 @@ fetch("https://valorant-api.com/v1/agents")
         }
         
       }
+      
     }
+
+    

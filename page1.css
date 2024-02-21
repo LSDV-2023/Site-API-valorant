@@ -83,6 +83,8 @@ button:hover {
 
 .context{
     /* display: grid; */
+    display: flex ;
+    justify-content: space-between;
     color: orange;
     border: 1px solid;
     border-color: firebrick;
@@ -202,15 +204,26 @@ button:hover {
 
 
 /* mettre ma div class "Test" dans Home.html et mettre l'image au milieu */
-.Test{
+.Test {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: space-between;
+}
 
-} 
+.Test2 {
+    flex: 1;
+}
 
-.Test2{
-    width: 200%;
-    height: 200%;
+.Test3 {
+    flex: 1;
+}
+
+.Test2 img {
+    width: 40%; /* Ajustez la taille de l'image selon vos besoins */
+    float: left;
+}
+
+.Test3 img {
+    width: 40%; /* Ajustez la taille de l'image selon vos besoins */
+    float:right;
+    
 }
