@@ -101,14 +101,16 @@ button:hover {
     display: grid;
     color: orange;
     
-    grid-template-columns:0px 4fr  2fr ;
+    grid-template-columns: 4fr  2fr ;
+    grid-template-rows: 1fr 1fr;
      gap: 50px 50px;
      min-width: 100px;
     
 }
 .item1{
     /* j'ai ajouté le display grid pour que l'image se centre */
-    grid-column: 2 ;
+    grid-column: 1 ;
+    grid-row: 1;
     display: grid;
     padding: 0px;
     align-items: center;
@@ -124,7 +126,8 @@ button:hover {
 
 
 .item1-1{
-    grid-column: 3 ;
+    grid-column: 2 ;
+    grid-row: 1;
     border: 2px solid;
     
     border-color: rgb(70, 18, 167);
@@ -136,6 +139,18 @@ button:hover {
     height: auto;
 
 } 
+
+.item2{
+    /* j'ai ajouté le display grid pour que l'image se centre */
+    grid-column: 1 /span 2 ;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    padding: 0px;
+    align-items: center;
+    width: 75%;
+    float: right;
+}
 
 
 .p1{
