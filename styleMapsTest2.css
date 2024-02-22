@@ -126,7 +126,7 @@ button:hover {
 /* donne l'effet de transparance */
 .container:hover .item1 {
     opacity: 0.3;
-  }
+}
 
 .title{
     align-items: center;
