@@ -103,9 +103,8 @@ button:hover {
     
     grid-template-columns: 1fr  2fr ;
     
-    
-    gap: 50px 50px;
-    min-width: 100px;
+     gap: 50px 50px;
+     min-width: 100px;
     
 }
 .item1{
@@ -120,11 +119,14 @@ button:hover {
 }
 
 
-
+/* j'ai definie l'emplacement des elements qui vont etre emporter de l'api */
+#maps_name_image{
+    grid-column: 2/span 2 ;
+}
 
 .container {
     position: relative;
-    width: 100%;
+    width: 50%;
     text-align: left;
 }
 /* donne l'effet de transparance */
@@ -140,8 +142,9 @@ button:hover {
     border-color: rgb(70, 18, 167);
     background-color:rgb(250, 187, 154,0.3);
     /* padding: 50px; */
-    
-    width: 500px;
+    text-align: center;
+    width:fit-content;
+    max-width: 100%;
     height: auto;
     display: grid;
     grid-template-rows: auto auto auto auto;
@@ -153,7 +156,6 @@ button:hover {
 
 .item2-1{
     grid-row: 1 ;
-    align-items: center;
     
     border: 2px solid;
     
@@ -161,8 +163,8 @@ button:hover {
     background-color:rgba(0, 216, 254, 0.808);
     /* padding: 50px; */
     text-align: center;
-    
-    width: auto;
+    width:fit-content;
+    max-width: 100%;
     height: auto;
 
 }
@@ -176,8 +178,8 @@ button:hover {
     background-color:rgba(13, 84, 37, 0.808);
     /* padding: 50px; */
     text-align: center;
-    
-    width: auto;
+    width:fit-content;
+    max-width: 100%;
     height: auto;
 
 }
@@ -191,7 +193,7 @@ button:hover {
     background-color:rgba(254, 85, 0, 0.808);
     /* padding: 50px; */
     text-align: center;
-    
+    width:fit-content;
     max-width: 100%;
     height: auto;
 
@@ -206,8 +208,8 @@ button:hover {
     background-color:rgba(254, 0, 169, 0.808);
     /* padding: 50px; */
     text-align: center;
-    
-    width: auto;
+    width:fit-content;
+    max-width: 100%;
     height: auto;
 
 }
@@ -222,7 +224,7 @@ button:hover {
 
     text-align: left;
 
-    font-size: 2vw;
+    
     line-height: 1.5;
     
     color: aquamarine;
@@ -241,7 +243,7 @@ button:hover {
     font-size: 25px;
     /* l'espace laissé quand on fait un saut de ligne */
     line-height: 0.8;
-        
+    
 }
 
 h1{
@@ -251,8 +253,8 @@ h1{
 
 .image-grid{
     --gap:16px;
-    --num-cols:2;
-    --row-height:auto;
+    --num-cols:3;
+    --row-height:500px;
     /* modification de la taille des images */
     height: auto;
     width: 600px;

@@ -6,11 +6,6 @@
     /* espace entre les mots quand on saute de ligne */
     padding: 10px;
     
-    /* background: url(valorant\ wallpaper.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; */
 }
 
 
@@ -82,101 +77,170 @@ button:hover {
 }
 
 .context{
-    /* display: grid; */
+    
     color: orange;
     border: 1px solid;
     border-color: firebrick;
-    /* grid-template-columns: 150px 100px 50px;
-    grid-template-rows: auto; */
     background-color: rgba(0, 0, 0, 0.6);
     /* espace entre le texte et la bordure */
     padding: 50px;
-    /* pour centrer le texte masque le grid  */
     text-align: center;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 100px 100px;
+    justify-content: center;
+    
+    
     
 }
 
 .text{ 
-    display: grid;
+    /* couleur des noms des maps */
     color: orange;
-    
-    grid-template-columns:0px 4fr  2fr ;
-     gap: 50px 50px;
-     min-width: 100px;
+    gap: 20px 20px;
     
 }
+
+
+
 .item1{
-    /* j'ai ajouté le display grid pour que l'image se centre */
-    grid-column: 2 ;
-    display: grid;
-    padding: 0px;
-    align-items: center;
-    width: 75%;
-    float: right;
-}
-
-
-/* j'ai definie l'emplacement des elements qui vont etre emporter de l'api */
-#maps_name_image{
-    grid-column: 2/span 2 ;
-}
-
-
-.item1-1{
-    grid-column: 3 ;
-    border: 2px solid;
-    
-    border-color: rgb(70, 18, 167);
-    background-color:rgb(250, 187, 154,0.3);
-    /* padding: 50px; */
-    text-align: center;
-    width:fit-content;
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    display: grid;
+    align-items: center;
 
-} 
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
 
+.container {
+    position: relative;
+    width: 50%;
+    text-align: left;
+}
+/* donne l'effet de transparance */
+.container:hover .item1 {
+    opacity: 0.3;
+}
 
-.p1{
+.title{
+    align-items: center;
+    
+    border: 10px solid;
+    border-color: rgb(107, 24, 44);
+    background-color: rgba(0, 0, 0);
+    border-block: 10px solid rgb(240, 98, 88);
+    writing-mode: horizontal-tb;
+    direction: rtl;
+}
+
+/* pour changer l'écriture placé dans l'image */
+
+.effet {
+    transition: .5s ease;
+    opacity: 0;
+    
+    position: absolute;
+    top: 0%;
+    left: 10%;
 
     text-align: left;
-    /* taille de la chaine de charachter */
-    font-size: 25px;
-    /* l'espace laissé quand on fait un saut de ligne */
-    line-height: 0.8;
+
     
+    line-height: 1.5;
+    
+    color: aquamarine;
+
 }
+
+.container:hover .effet {
+    opacity: 1;
+}
+
+
+/* rendre le texte responsive (change selon la taille de la page) */
+
+@media screen and (min-width: 956px) {
+    div.effet {
+        /* vw est une valeur qui rend le texte responsive 50%, je reconfigure a chaque fois  */
+      font-size: 2.5vw;
+      top:0%
+    }
+}
+
+@media screen and (max-width: 955px) {
+    div.effet {
+      font-size: 2vw;
+      top:10%
+    }
+}
+
+@media screen and (max-width: 614px) {
+    div.effet {
+      font-size: 1.5vw;
+    }
+}
+
+
+
+
+
+
 
 h1{
-    line-height: 0.5;
+    /* l'espace libre qu'on on saute de ligne */
+    line-height: 0.8;
 }
-
 .image-grid{
-    --gap:16px;
-    --num-cols:3;
-    --row-height:500px;
-    /* modification de la taille des images */
-    height: auto;
-    width: 600px;
+    /* pour que la map ne deborde pas hors de sa place */
+    --gap:5px;
+    --num-cols:1;
+    --row-height:auto;
 
     box-sizing: border-box;
     padding:var(--gap);
 
-    display: grid;
-    grid-template-columns: repeat(var(--num-cols),1fr);
+    display: grid  ;
+    grid-template-columns: repeat(var(--num-cols),2fr);
     grid-auto-rows:var(--row-height) ;
     gap:var(--gap);
-    width:fit-content;
-    max-width: 200%;
+    object-fit: cover;
+    /* width controle la taille de l'image */
+    width: 150%;
     height: auto;
-
+    
 }
+
+/* rendre les images responsives (change selon la taille de la page) */
+@media screen and (max-width: 955px) {
+    div.image-grid {
+      width:180%
+    }
+}
+
+@media screen and (max-width: 614px) {
+    div.image-grid {
+      width:220%
+    }
+}
+
+
 .image-grid > img {
+   object-fit: cover;
+  
+   align-content: center;
    width:fit-content;
-   max-width: 200%;
+   max-width: 100%;
    height: auto;
 
+   align-items: center;
+   align-self: center;
+   align-content: center;
+    
+
 }
-
-
